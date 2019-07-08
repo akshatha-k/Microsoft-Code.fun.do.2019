@@ -1,2 +1,11 @@
-# Code-fun-do-pepperoni
-Repository created as a submission of Team Pepperoni for the second and third stages of Microsoft Code fun Do++
+# Code Fun Do 2019
+
+## Team Pepperoni
+
+### Current Problems and Issues
+
+### Our Solution/ Idea abstract
+
+### Major Functionalities and Tech Stack
+
+### References
