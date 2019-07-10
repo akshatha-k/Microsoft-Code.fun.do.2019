@@ -3,19 +3,19 @@
 ## Team Pepperoni
 
 Earlier this year, India faced the largest number of eligible citizens to vote for the 
-national government making it the biggest democratic elections in the world. At such a large scale, 
+national government making it the biggest democratic election in the world. At such a large scale, 
 every small decision makes a huge difference. Every vote can decide the future of the nation.
 ### Current Problems and Issues
 
 The biggest problem we face today, is the tampering of votes by Manipulation of the Public or
-	polling booths being taken over by various organizations to benifit a political party. 
+	polling booths being taken over by various organizations to benefit a political party. 
 	In a country as large as India, such actions take away the right to vote freely from many citizens.
 
 Another problem is people who don't vote. The 2 major reasons for this is, 
 	i) Timely Constraints
 	ii) Assigned Poll Station is far from the current residence of the citizen.
 
-This year, many eligible citizens were first-time voters who study in college and cannot afford to travel
+This year, many eligible citizens were first-time voters who study in colleges and cannot afford to travel
 back to their place of recidence. 
 ### Our Proposal
   A Blockchain is a chain of entries in a ledger which is shared among a group of users who
