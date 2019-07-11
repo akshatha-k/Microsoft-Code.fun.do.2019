@@ -38,8 +38,10 @@ Our system consits of the normal poll station, with the following modifications 
 The cameras setup at the poll station continuously scan for any illegal equipment / weapons.
 The Electronic Voting Machine (EVM) accepts votes if the camera detects no such equipment 
 that is flagged illegal. Once the citizen chooses the party, the biometric fingerprint scanner
-waits for verification and once verified, the vote is permanently stored in the poll-station blockchain.
+waits for verification and once verified, the vote is permanently stored in the district blockchain.
 Assuming fingerprint data is already provided by the Unique Identification Authority of the country.
+The EVM is constructed around a small embedded microcomputer that is connected to Azure Blockchain and a 
+database which holds the unique Identification Data of the people in that region.
 
 Each poll station in a region (like a district) maintains a copy of the ledger for that region. 
 All the votes in a particular region is then totalled to compute the national total. 
@@ -67,5 +69,5 @@ of residency.
 
 
 ### Technologies Used
-  Azure Blockchain, Azure IoT Hub, PowerBI, Azure Kubernetes, Embedded microcomputers to host the image recognition algorithms locally. TensorFlow, Python and C++
+  Azure Blockchain, Azure IoT Hub, PowerBI, Azure Kubernetes, Embedded microcomputers to connect the EVMs to the Blockchain, SQL, TensorFlow, Python and C++
 	
