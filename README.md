@@ -28,7 +28,7 @@ create a system which prevents vote tampering and allows people to vote freely.
 Our system consits of the normal poll station, with the following modifications -
 	
 - A biometric fingerprint verification to confirm the vote by the citizen deployed and connected using Azure IoT Hub
-- Detection of illegal equipment and weapony using Image Recognition Technology and Deep Learning using Azure Kubernetes
+- Detection of illegal equipment and weaponry using Image Recognition Technology and Deep Learning using Azure Kubernetes. We employ the sightengine API and the Vision API by using their pre-trained deep-learning model for the detection and securing the actual process of voting by feeding the program live-feed of the process and making it predict any illegal activity at the booth.
 - Acceptance, Storage and calculation of votes per party using Azure Blockchain. 
 - Visualizing voter data from various poll stations using PowerBI. 
 - Releasing a report and predicting the women voters thing (AKSHATHA PLEASE FINISH IT OFF)
@@ -69,5 +69,5 @@ of residency.
 
 
 ### Technologies Used
-  Azure Blockchain, Azure IoT Hub, PowerBI, Azure Kubernetes, Embedded microcomputers to connect the EVMs to the Blockchain, SQL, TensorFlow, Python and C++
+  Azure Blockchain, Azure IoT Hub, PowerBI, Azure Kubernetes, Embedded microcomputers to connect the EVMs to the Blockchain, SQL, TensorFlow, Python and C++, online Deep-learning APIs (sightengine API/Vision API)
 	
