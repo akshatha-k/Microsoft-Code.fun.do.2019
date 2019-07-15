@@ -6,7 +6,7 @@ Earlier this year, India recorded the largest number of eligible citizens to vot
 national government making it the biggest democratic election in the world. At such a large scale, 
 every small decision affecting this process makes a huge difference. Every vote can decide the future of our nation.
 ### Current Problems and Issues
-The biggest problem we face today, is the tampering of votes by polling booths being taken over 	by various organizations to benefit a political party.  Alleged cases such as [this](https://www.livemint.com/Politics/fIKiRvhaDSieYz25Lm8vRM/EVM-tampering-case-Supreme-Court-issues-notice-to-Centre-E.html) are not unheard of. In a country as large as India, such actions take away from many citizens the right to vote freely.
+The biggest problem we face today, is the tampering of votes by polling booths being taken over 	by various organizations to benefit a political party.  Alleged cases such as [this](https://www.livemint.com/Politics/fIKiRvhaDSieYz25Lm8vRM/EVM-tampering-case-Supreme-Court-issues-notice-to-Centre-E.html) are not unheard of. In a country as large as India, such actions take away the right to vote freely from many citizens.
 
 Another problem is low voter turnout. The 2 major reasons being, 
 	i) Time Constraints
@@ -20,13 +20,15 @@ authorize any transaction through the Blockchain. Each block contains a cryptogr
 previous block, a timestamp, and transaction data. 
 
 By leveraging the power of the cloud and Security of the Blockchain Technology, we aim to  
-create a system which prevents vote tampering and allows people to vote freely.
+create a system which prevents vote tampering and allows people to vote freely. Our system also displays statistics 
+such as the promises made and fulfilled for each candidate taking part in the elections in a particular region and is displayed to the 
+voter according to the region of recidency.
 	
 Our system comprises of the following modifications to the normal polling stations -
 
 #### Security
 - A biometric fingerprint verification to confirm the vote by the citizen deployed and connected using Azure IoT Hub
-- Detection of illegal equipment and weaponry using Image Recognition Technology and Deep Learning using Azure Kubernetes. We employ the sightengine API and the Vision API by using their pre-trained deep-learning model for the detection and securing the actual process of voting by feeding the program live-feed of the process and making it predict any illegal activity at the booth.
+- Detection of illegal equipment and weaponry using Image Recognition Technology and Deep Learning. We employ the sightengine API and the Vision API by using their pre-trained deep-learning model for the detection and securing the actual process of voting by feeding the program live-feed of the process and making it predict any illegal activity at the booth.
 - OpenPose to detect tampering of the EVM in poll boths, and mainly, in EVM storage rooms.
 
 #### Blockchain
@@ -60,9 +62,9 @@ Our system can help the personnel conducting elections in a region to help it go
 
 The system also helps people who are away from their areas of recidence to vote for their representative.
 Unless the citizen is confirmed permanent residence somewhere else, the system allows him/her to vote for
-their representative upon logging in to an EVM anywhere in the country. A query is passed through the system network
+their representative upon logging in to an EVM anywhere in the country. The EVM displays various statistics about all the candidates taking part in the election in that region which helps the voter to decide. A query is passed through the system network
 which then sends the data of the voter to the blockchain which holds data of the region he/she is 
-registered to reside at. An entry is made in the blockchain of that district.  
+registered to reside at. An entry is made in the blockchain of that district. 
 
 A real-time algorithm implementing open pose is deployed in EVM storage rooms as well as polling stations. It raises an alert to the authorised personnel if anybody is detected to hamper the EVM. This is performed by estimating the coordinates of the person w.r.t the evm and an alert is generated if the person is detected within a set threshold distance.
 
