@@ -3,8 +3,8 @@
 #include "FPS_GT511C3.h"
 #include "SoftwareSerial.h"
 
-#define arduino_rx_pin 4
-#define arduino_tx_pin 5
+#define arduino_rx_pin 10
+#define arduino_tx_pin 11
 // FPS (TX) is connected to pin 4 (Arduino's Software RX)
 // FPS (RX) is connected through a converter to pin 5 (Arduino's Software TX)
 FPS_GT511C3 fps(arduino_rx_pin, arduino_tx_pin); // (Arduino SS_RX = pin 4, Arduino SS_TX = pin 5)
@@ -76,6 +76,8 @@ void Enroll()
 
 int Validate()
 {
+  while(1)
+  {
   int ID;
   // Identify fingerprint test
   if (fps.IsPressFinger())
@@ -93,10 +95,12 @@ int Validate()
     {//if the fingerprint matches, provide the matching template ID
       Serial.print("Verified ID:");
       Serial.println(id);
+      return ID;
     }
     else
     {//if unable to recognize
       Serial.println("Finger not found");
+      return -1;
     }
   }
   else
@@ -104,14 +108,17 @@ int Validate()
     Serial.println("Please press finger");
   }
   delay(100);
-  return ID;
+  
+  }
 }
+
 
 void setup()
 {
   Serial.begin(9600); //set up Arduino's hardware serial UART
-  fps.UseSerialDebug = true; // so you can see the messages in the serial debug screen
+  //fps.UseSerialDebug = true; // so you can see the messages in the serial debug screen
   fps.Open(); //send serial command to initialize fps
+
 }
 
 void loop()
@@ -127,11 +134,13 @@ void loop()
     //Enrol fingerprint
     else if(c== 'E')
     {
+      fps.SetLED(true);   //turn on LED so fps can see fingerprint
       Enroll();
     }
     //Detect fingerprint validity
     else if(c=='V')
     {
+      fps.SetLED(true);   //turn on LED so fps can see fingerprint
       Validate();
     }
   }
