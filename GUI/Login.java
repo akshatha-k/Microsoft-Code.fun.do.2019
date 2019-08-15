@@ -2,6 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.event.*;
+import java.sql.*;
 
 @SuppressWarnings("serial")
 
@@ -11,12 +12,31 @@ class Login extends JFrame{
     JLabel curr_Location = new JLabel("Manipal - 576104");
 
     JLabel inst;
+    String query;
+    Connection conn;
 
     Login(){
         super("Authenticate");
         setSize(fing_print.getIconWidth(),fing_print.getIconHeight() + 120);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
+
+        String hostName = "pepperoni.database.windows.net";
+        String dbName = "cfd19";
+        String user = "potato";
+        String password = "BATATAv@d@";
+        String url = String.format("jdbc:sqlserver://%s:1433;database=%s;user=%s;password=%s;encrypt=true;"
+            + "hostNameInCertificate=*.database.windows.net;loginTimeout=30;", hostName, dbName, user, password);
+        
+            try{
+                conn = DriverManager.getConnection(url);
+                String schema = conn.getSchema();
+                System.out.println("Successful Conn - Schema: " + schema);
+                query = "SELECT * FROM PEOPLE WHERE ID = " + ret_id;
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
 
         inst = new JLabel("Place Your finger on the Scanner");
         inst.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -42,8 +62,15 @@ class Login extends JFrame{
                 try {
                     console.println("[ASCII DATA] " + event.getAsciiString());
 
-                    if(event.getAsciiString().equals("1"))
-                        new GUI(#sendID);
+                    if(!event.getAsciiString().isEmpty()){
+                        try(Statement stmt = conn.createStatement();
+                            ResultSet resultSet = stmt.executeQuery(query)){
+                                String img_url = resultSet.getString(1);
+                                String Name = resultSet.getString(2);
+                                String Info = resultSet.getString(3);
+                                String parties = resultSet.getString(4);
+                        }
+                    }
                     else{
                         System.out.println("Failed Authentication");
                     }
