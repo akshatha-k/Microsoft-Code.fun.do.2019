@@ -32,7 +32,7 @@ class Login extends JFrame{
                 conn = DriverManager.getConnection(url);
                 String schema = conn.getSchema();
                 System.out.println("Successful Conn - Schema: " + schema);
-                query = "SELECT * FROM PEOPLE WHERE ID = " + ret_id;
+                //query = "SELECT * FROM PEOPLE WHERE ID = " + ret_id;
             }
             catch(Exception e){
                 e.printStackTrace();
