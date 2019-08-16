@@ -1,6 +1,7 @@
 import serial
 import RPi.GPIO as GPIO
 import time
+import sys
 
 def is_number(s):
     try:
@@ -19,7 +20,7 @@ def is_number(s):
 ser=serial.Serial("/dev/ttyACM1",9600)
 ser.baudrate = 9600
 
-c = input("in: ")
+c = sys.argv[1]
 print(c)
 ser.write(c)
 if(c == "B"):

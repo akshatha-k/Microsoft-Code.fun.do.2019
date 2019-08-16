@@ -61,14 +61,16 @@ class Login extends JFrame{
         setResizable(false);
 
         try{
-            String run_command = "python somescript.py V";
+            String run_command = "python somescript.py \"V\"";
             Process proc = Runtime.getRuntime().exec(run_command);
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
             String line = "";
             while((line = reader.readLine()) != null){
-                inst.setText(line);
-                inst.paintImmediately(inst.getVisibleRect());
+                if(!inst.getText().equalsIgnoreCase(line)){
+                    inst.setText(line);
+                    inst.paintImmediately(inst.getVisibleRect());
+                }
             }
             proc.destroy();
         }
