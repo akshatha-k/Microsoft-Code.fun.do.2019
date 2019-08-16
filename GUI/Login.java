@@ -69,7 +69,6 @@ class Login extends JFrame{
             while((line = reader.readLine()) != null){
                 if(!inst.getText().equalsIgnoreCase(line)){
                     inst.setText(line);
-                    inst.paintImmediately(inst.getVisibleRect());
                 }
             }
             proc.destroy();
