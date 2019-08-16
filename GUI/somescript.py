@@ -1,17 +1,18 @@
 import serial
 import RPi.GPIO as GPIO
 import time
+import sys
  
-#return False
+
 ser=serial.Serial("/dev/ttyACM0",9600)
 ser.baudrate = 9600
-c = input("bleh")
-ser.write(c)
+arg = sys.argv[1]
+
+ser.write(arg)
 while True:
     read_ser = ser.readline()
-    if(read_ser.isnumeric()):
-        ##User ID
+    if(arg == "V" and read_ser.isnumeric()):
+        print(read_ser)
+        break
     else:
-        ##Send string back to GUI  
-                
-
+        print(read_ser)
