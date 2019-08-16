@@ -1,0 +1,186 @@
+{
+    "ApplicationName": "pepperoni_cfd19",
+    "DisplayName": "Voter Data BC",
+    "Description": "Stores voter data from evms in a region",
+    "ApplicationRoles": [
+      {
+        "Name": "Voter",
+        "Description": "A person who votes for a candidate representative."
+      },
+      {
+        "Name": "BC_Administrator",
+        "Description": "Admin of the blockchain at a poll station."
+      }
+    ],
+    "Workflows": [
+      {
+        "Name": "pepperoni_cfd19",
+        "DisplayName": "Voter Data BC",
+        "Description": "Workflow to confirm and store voting data",
+        "Initiators": [ "BC_Administrator" ],
+        "StartState": "Initial",
+        "Properties": [
+          {
+            "Name": "State",
+            "DisplayName": "State",
+            "Description": "Holds the state of the contract.",
+            "Type": {
+              "Name": "state"
+            }
+          },
+          {
+            "Name": "Candidate_Voted",
+            "DisplayName": "Candidate Voted for",
+            "Description": "Voter votes for this candidate.",
+            "Type": {
+              "Name": "string"
+            }
+          },
+          {
+            "Name": "Region_Name",
+            "DisplayName": "Poll station Region",
+            "Description": "Region in the country where the Poll station is located",
+            "Type": {
+              "Name": "string"
+            }
+          },
+          {
+
+            "Name": "InstanceVoter",
+  
+            "DisplayName": "Instance Voter",
+  
+            "Description": "Voter who casts his/her vote",
+  
+            "Type": {
+  
+              "Name": "address"
+  
+            }
+  
+          },
+  
+          {
+  
+            "Name": "InstanceADM",
+  
+            "DisplayName": "Instance Administrator",
+  
+            "Description": "The admin of this particular poll station",
+  
+            "Type": {
+  
+              "Name": "address"
+  
+            }
+  
+          }
+        ],
+        "Constructor": {
+          "Parameters": [
+          ]
+        },
+        "Functions": [
+          {
+            "Name": "Initiate",
+            "DisplayName": "Initiate Vote cast",
+            "Description": "Initiate Vote cast",
+            "Parameters": [
+              {
+                "Name": "region_Name",
+                "Description": "Name of the Region from which the vote is being casted.",
+                "DisplayName": "Region",
+                "Type": {
+                  "Name": "string"
+                }
+              }
+            ]
+          },
+          {
+            "Name": "Validate",
+            "DisplayName": "Validate",
+            "Description": "Stores voting data to blockchain",
+            "Parameters": [
+              {
+                "Name": "Candidate_Name",
+                "Description": "Vote cast by voter on this candidate.",
+                "DisplayName": "Cadidate_Selected.",
+                "Type": {
+                  "Name": "string"
+                }
+              }
+            ]
+          },
+          {
+            "Name": "Invalidate",
+            "DisplayName": "Invalidate",
+            "Description": "Vote is invalidated by security functions.",
+            "Parameters": [
+              {
+                "Name": "Error_Code",
+                "Description": "Error Code which describes the error due to which the voting terminated.",
+                "DisplayName": "...",
+                "Type": {
+                  "Name": "string"
+                }
+              }
+            ]
+          }
+        ],
+        "States": [
+          {
+            "Name": "Initial",
+            "DisplayName": "Initial",
+            "Description": "Initiate Voting",
+            "PercentComplete": 50,
+            "Style": "Success",
+            "Transitions": [
+              {
+                "AllowedRoles": ["BC_Administrator"],
+                "AllowedInstanceRoles": [],
+                "Description": "Initial State",
+                "Function": "Initiate",
+                "NextStates": [ "Valid" ],
+                "DisplayName": "Initiate"
+              }
+            ]
+          },
+          {
+            "Name": "Valid",
+            "DisplayName": "Valid",
+            "Description": "Valid Vote",
+            "PercentComplete": 100,
+            "Style": "Success",
+            "Transitions": [
+            ]
+          },
+          {
+            "Name": "Invalid",
+            "DisplayName": "Invalid",
+            "Description": "Invalid Vote",
+            "PercentComplete": 0,
+            "Style": "Success",
+            "Transitions": [
+            ]
+          },
+          {
+            "Name": "Intermediate",
+            "DisplayName": "Intermediate",
+            "Description": "Voting in process",
+            "PercentComplete": 50,
+            "Style": "Success",
+            "Transitions": [
+              {
+                "AllowedRoles": [],
+                "AllowedInstanceRoles": ["InstanceVoter"],
+                "Description": "...",
+                "Function": "Validate",
+                "NextStates": ["Valid"],
+                "DisplayName": "Validate"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
