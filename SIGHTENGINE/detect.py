@@ -5,7 +5,8 @@ client = SightengineClient('{api_key}', '{api_secret}')
 
 def detect_weapons(data):
     global client
-    output = client.check('wad').set_file(data)
+    videopath = 'Link to video'
+    output = client.check('wad').video_sync(videopath)
     print("Probability of Weapon: ", output['weapon'])
 
 ##### ADD FUNCTIONALITY HERE
