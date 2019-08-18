@@ -20,7 +20,7 @@ def is_number(s):
 ser=serial.Serial("/dev/ttyACM1",9600)
 ser.baudrate = 9600
 
-c = sys.argv[1]
+c = sys.argv[1].encode('utf-8')
 print(c)
 ser.write(c)
 if(c == "B"):
