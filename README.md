@@ -4,6 +4,8 @@
 
 ![Voter placing his vote](https://github.com/akshatha-k/Code.fun.do.2019/blob/master/pictures/person_voting.jpeg)
 
+*Prototype testing*
+
 
 Earlier this year, India recorded the largest number of eligible citizens to vote for the 
 national government making it the biggest democratic election in the world. At such a large scale, 
@@ -20,7 +22,8 @@ This year, many eligible citizens were first-time voters who study in colleges a
 back to their place of residence. 
 ### Our Proposal
 
-![SEVAM](https://github.com/akshatha-k/Code.fun.do.2019/blob/master/pictures/SEVAM.jpeg)
+![SEVAM](https://github.com/akshatha-k/Code.fun.do.2019/blob/master/pictures/SEVAM.jpeg)*Our EVM Model*
+
   A Blockchain is a chain of entries in a ledger which is shared among a group of users who
 authorize any transaction through the Blockchain. Each block contains a cryptographic hash of the 
 previous block, a timestamp, and transaction data. 
@@ -34,10 +37,15 @@ Our system comprises of the following modifications to the normal polling statio
 
 #### Security
 ![Security system flowchart](https://github.com/akshatha-k/Code.fun.do.2019/blob/master/pictures/methodology.png)
+
+*Flowchart of the Security system*
 - A biometric fingerprint verification to confirm the vote by the citizen deployed and connected using Azure IoT Hub
 - Detection of illegal equipment and weaponry using Image Recognition Technology and Deep Learning. We employ the sightengine API and the Vision API by using their pre-trained deep-learning model for the detection and securing the actual process of voting by feeding the program live-feed of the process and making it predict any illegal activity at the booth.
 - OpenPose to detect tampering of the EVM in poll boths, and mainly, in EVM storage rooms.
+
 ![OpenPose](https://github.com/akshatha-k/Code.fun.do.2019/blob/master/pictures/evm_pose.png)
+
+*OpenPose based surveillance*
 
 #### Blockchain
 - Acceptance, Storage and calculation of votes per party using Azure Blockchain. 
@@ -50,9 +58,13 @@ Our system comprises of the following modifications to the normal polling statio
 The above techniques will enable the election commission to allocate resources as well as security more effectively. This will also raise awareness about areas and communities with low voter percentage, as well as reasons that lead to low/high voter turnout, so the govt. can work to increase voter awareness.
 3) Predict expense to be incurred to the govt. in the next elections based on previous voting trends. 
 
+![Linear Regression model to predict voter turnout](https://github.com/akshatha-k/Code.fun.do.2019/blob/master/pictures/linear%20reg%20test%20set.png)
+
+*Linear regression model to predict voter turnout . Note the outlier in 1985*
+
 #### Working:
 
-![Prototype](https://github.com/akshatha-k/Code.fun.do.2019/blob/master/pictures/Prototype.jpeg)
+![Prototype](https://github.com/akshatha-k/Code.fun.do.2019/blob/master/pictures/Prototype.jpeg)*Prototype Setup*
 
 The EVM is constructed around a small embedded microcomputer that is connected to Azure Blockchain and a 
 database which holds the unique Identification Data of the people in that region.
@@ -94,9 +106,14 @@ of residency.
  
 ### References
 [Microsoft Azure Workbench](https://docs.microsoft.com/en-us/azure/blockchain/workbench/)
+
 [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose)
+
 [Government Election Data set](https://data.gov.in)
+
 [Arduino](https://www.arduino.cc)
+
 [Raspberry Pi 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
+
 [Finger Print Scanner](https://data.gov.in)
  
