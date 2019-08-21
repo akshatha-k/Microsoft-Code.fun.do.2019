@@ -2,9 +2,13 @@
 
 ## Team Pepperoni
 
+![Voter placing his vote](https://github.com/akshatha-k/Code.fun.do.2019/blob/master/pictures/person_voting.jpeg)
+
+
 Earlier this year, India recorded the largest number of eligible citizens to vote for the 
 national government making it the biggest democratic election in the world. At such a large scale, 
 every small decision affecting this process makes a huge difference. Every vote can decide the future of our nation.
+
 ### Current Problems and Issues
 The biggest problem we face today, is the tampering of votes by polling booths being taken over 	by various organizations to benefit a political party.  Alleged cases such as [this](https://www.livemint.com/Politics/fIKiRvhaDSieYz25Lm8vRM/EVM-tampering-case-Supreme-Court-issues-notice-to-Centre-E.html) are not unheard of. In a country as large as India, such actions take away the right to vote freely from many citizens.
 
@@ -15,6 +19,8 @@ Another problem is low voter turnout. The 2 major reasons being,
 This year, many eligible citizens were first-time voters who study in colleges and cannot afford to travel
 back to their place of residence. 
 ### Our Proposal
+
+![SEVAM](https://github.com/akshatha-k/Code.fun.do.2019/blob/master/pictures/SEVAM.jpeg)
   A Blockchain is a chain of entries in a ledger which is shared among a group of users who
 authorize any transaction through the Blockchain. Each block contains a cryptographic hash of the 
 previous block, a timestamp, and transaction data. 
@@ -27,9 +33,11 @@ voter according to the region of recidency.
 Our system comprises of the following modifications to the normal polling stations -
 
 #### Security
+![Security system flowchart](https://github.com/akshatha-k/Code.fun.do.2019/blob/master/pictures/methodology.png)
 - A biometric fingerprint verification to confirm the vote by the citizen deployed and connected using Azure IoT Hub
 - Detection of illegal equipment and weaponry using Image Recognition Technology and Deep Learning. We employ the sightengine API and the Vision API by using their pre-trained deep-learning model for the detection and securing the actual process of voting by feeding the program live-feed of the process and making it predict any illegal activity at the booth.
 - OpenPose to detect tampering of the EVM in poll boths, and mainly, in EVM storage rooms.
+![OpenPose](https://github.com/akshatha-k/Code.fun.do.2019/blob/master/pictures/evm_pose.png)
 
 #### Blockchain
 - Acceptance, Storage and calculation of votes per party using Azure Blockchain. 
@@ -43,6 +51,8 @@ The above techniques will enable the election commission to allocate resources a
 3) Predict expense to be incurred to the govt. in the next elections based on previous voting trends. 
 
 #### Working:
+
+![Prototype](https://github.com/akshatha-k/Code.fun.do.2019/blob/master/pictures/Prototype.jpeg)
 
 The EVM is constructed around a small embedded microcomputer that is connected to Azure Blockchain and a 
 database which holds the unique Identification Data of the people in that region.
@@ -80,5 +90,13 @@ of residency.
 
 
 ### Technologies Used
-  Azure Blockchain, Azure IoT Hub, PowerBI, Azure Kubernetes, Embedded microcomputers to connect the EVMs to the Blockchain, SQL, TensorFlow, Python and C++, OpenPose, online Deep-learning APIs (sightengine API/Vision API)
- Government dataset
+  Azure Blockchain, Azure IoT Hub, Embedded microcomputers to connect the EVMs to the Blockchain, SQL, TensorFlow, Python and C++, OpenPose, online Deep-learning APIs (sightengine API), Government of India election dataset
+ 
+### References
+[Microsoft Azure Workbench](https://docs.microsoft.com/en-us/azure/blockchain/workbench/)
+[OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose)
+[Government Election Data set](https://data.gov.in)
+[Arduino](https://www.arduino.cc)
+[Raspberry Pi 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
+[Finger Print Scanner](https://data.gov.in)
+ 
